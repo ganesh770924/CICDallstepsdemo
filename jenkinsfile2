@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                gitCheckout(branch:'main',url:'https://github.com/buildpacks/sample-java-app.git')
+                gitCheckout(branch:'main',url:'https://github.com/ganesh770924/CICDallstepsdemo.git')
             }
         }
         }
