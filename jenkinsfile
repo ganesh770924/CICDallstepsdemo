@@ -7,6 +7,11 @@ pipeline{
                 gitCheckout(branch:'main',url:'https://github.com/buildpacks/sample-java-app.git')
             }
         }
+        stage("Read"){
+          steps{
+                readFile 'README.md'
+            }
+        }
         stage('mavenbuild'){
             tools{
                 maven 'maven3'
