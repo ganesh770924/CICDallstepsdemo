@@ -1,0 +1,23 @@
+@Library('ganesh-shared-library')_
+pipeline{
+    agent any
+    stages{
+        stage('checkout'){
+            steps{
+                gitCheckout(branch:'main',url:'https://github.com/buildpacks/sample-java-app.git')
+            }
+        }
+        stage('mavenbuild'){
+            tools{
+                maven 'maven3'
+                }
+            steps{
+                     sh 'mvn clean package'
+                 
+            }
+        }
+        stage(dockerfile)
+            
+        }
+    }
+}
