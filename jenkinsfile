@@ -16,8 +16,24 @@ pipeline{
                  
             }
         }
-        stage(dockerfile)
-            
+        stage('dockerimagebuild'){
+          steps{
+               sh 'docker build -f ../Dockerfile '-t tomcat:latest"
+          
+              }
         }
-    }
-}
+        stage('dockerruncontainer'){
+            steps{
+             sh "docker run -it -d --name tomcatwebapp -p 9090:8080 tomcat:latest"
+
+              }
+             }
+           }
+          }
+        
+        
+        
+        
+        
+            
+     
