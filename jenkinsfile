@@ -21,11 +21,7 @@ pipeline{
                  
             }
         }
-         stage('checkout2'){
-            steps{
-                gitCheckout(branch:'main',url:'https://github.com/ganesh770924/CICDallstepsdemo.git')
-            }
-        }
+        
         stage('dockerimagebuild'){
           steps{
                sh 'docker build -f ../Dockerfile'
