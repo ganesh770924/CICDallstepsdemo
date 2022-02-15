@@ -4,7 +4,8 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                gitCheckout(branch:'main',url:'https://github.com/buildpacks/sample-java-app.git')
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [],
+                userRemoteConfigs: [[url: 'https://github.com/buildpacks/sample-java-app.git'], [url: 'https://github.com/ganesh770924/CICDallstepsdemo.git']]])
             }
         }
         stage("Read"){
