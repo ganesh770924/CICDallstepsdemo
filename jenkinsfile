@@ -27,13 +27,13 @@ pipeline{
         
         stage('dockerimagebuild'){
           steps{
-               sh 'docker build -f ../CICDFlow_pipeline/mydir/Dockerfile .'
+               sh 'docker build -f ../CICDFlow_pipeline/mydir/Dockerfile -t tomcat:${env.BUILD_NUMBER} .'
           
               }
         }
         stage('dockerruncontainer'){
             steps{
-             sh "docker run -it -d --name tomcatwebapp -p 9090:8080 tomcat:latest"
+             sh "docker run -it -d --name tomcatwebapp -p 9090:8080 tomcat:${env.BUILD_NUMBER}"
 
               }
              }
