@@ -27,7 +27,7 @@ pipeline{
         
         stage('dockerimagebuild'){
           steps{
-               sh 'docker build -f ../CICDFlow_pipeline/mydir/Dockerfile -t tomcat:${env.BUILD_NUMBER} .'
+               sh "docker build -f ../CICDFlow_pipeline/mydir/Dockerfile -t tomcat:${env.BUILD_NUMBER} ."
           
               }
         }
