@@ -12,7 +12,7 @@ pipeline{
         }
         stage("checkout project"){
           steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/skeeto/sample-java-project.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/HouariZegai/Calculator.git']]])
             }
         }
         stage('mavenbuild'){
