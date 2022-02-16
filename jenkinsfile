@@ -45,7 +45,7 @@ pipeline{
             steps{
             sh "docker rm -f tomcatwebapp || true "
              
-             sh "docker run -it -d --name tomcatwebapp -p 9090:8080 tomcat:${env.BUILD_NUMBER}"
+             sh "docker run -it -d --name tomcatwebapp -p 9090:8080 ganesh7709/tomcat:${env.BUILD_NUMBER}"
 
               }
              }
