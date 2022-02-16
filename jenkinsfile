@@ -37,7 +37,7 @@ pipeline{
                sh "docker login -u ganesh7709 -p ${dockerhubpwd}"
               
            } 
-         sh  "docker push -t ganesh7709/tomcat:${env.BUILD_NUMBER}"
+         sh  "docker push ganesh7709/tomcat:${env.BUILD_NUMBER}"
         
         }
         }
