@@ -54,7 +54,7 @@ pipeline{
            steps{
              script{
              
-                  kubernetesDeploy (configs: '', kubeconfigId: 'ganeshkubeuser')
+                  kubernetesDeploy (configs: 'mydeployment.yaml', kubeconfigId: 'ganeshkubeuser')
              }
            
            }
