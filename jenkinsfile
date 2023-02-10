@@ -50,6 +50,17 @@ pipeline{
 
               }
              }
+         stage('deploy-to-kubernetes'){
+           steps{
+             script{
+             
+                  kubernetesDeploy (configs: '', kubeconfigId: 'ganeshkubeuser')
+             }
+           
+           }
+         
+         
+         }
            }
           }
         
