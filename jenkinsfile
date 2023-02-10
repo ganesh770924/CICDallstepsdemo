@@ -28,7 +28,7 @@ pipeline{
         stage('dockerimagebuild'){
            
           steps{
-               sh "docker build ./mydir/Dockerfile -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock --privileged --name jenkins jenkins -t ganesh7709/myapp ."
+               sh "docker build ./mydir/Dockerfile -v ${which docker}:/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock --privileged --name jenkins jenkins -t ganesh7709/myapp ."
           
               }
         }
