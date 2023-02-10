@@ -27,7 +27,7 @@ pipeline{
         
         stage('dockerimagebuild'){
           steps{
-               sh "docker build -f ../CICDFlow_pipeline/mydir/Dockerfile -t ganesh7709/myapp ."
+               sh "docker build -f ./Dockerfile -t ganesh7709/myapp ."
           
               }
         }
